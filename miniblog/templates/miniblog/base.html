@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+   {% block Title %} <title>Home</title>{% endblock %}
+    <link rel="stylesheet" href="{% static 'miniblog/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'miniblog/css/style.css' %}">
+</head>
+<body>
+<div class="container-fluid bg-dark">
+    {% include 'miniblog/navbar.html' %}
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-12">
+                {% block msg %}
+                {% endblock msg %}
+            </div>
+        </div>
+        <div class="row">
+            {% block side %}
+            {% endblock side %}
+              
+            {% block content %}
+            {% endblock content %}
+        </div>
+    </div>
+<script src="{% static 'miniblog/js/jquery.js' %}"></script>
+<script src="{% static 'miniblog/js/popper.js' %}"></script>
+<script src="{% static 'miniblog/js/bootstrap.js' %}"></script>
+
+
+<footer class="section footer-classic context-dark bg-image mt-5" style="background: #343a40;">
+        <div class="container mt-3"><br><br>
+          <div class="row row-30">
+            <div class="col-md-4 col-xl-5">
+              <div class="pr-xl-4"><a class="brand" href="index.html"></a>
+                <p>We are an award-winning creative agency, dedicated to the best result in web design, promotion, business consulting, and marketing.</p>
+                <!-- Rights-->
+                <p class="rights"><span> </span><span class="copyright-year">2018</span><span></span><span>Waves</span><span></span><span>All Rights Reserved.</span></p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <h5>Contacts</h5>
+              <dl class="contact-list">
+                <dt>Address:</dt>
+                <dd>Global Village, Bengaluru</dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>Email:</dt>
+                <dd><a href="mailto:#">rajpruthvi467@gmail.com</a></dd>
+              </dl>
+              <dl class="contact-list">
+                <dt>Phones:</dt>
+                <dd><a href="tel:#">9986730364</a> <span>or</span> <a href="tel:#">9663096140</a>
+                </dd>
+              </dl>
+            </div>
+            <div class="col-md-4 col-xl-3">
+              <h5>Links</h5>
+              <ul class="nav-list">
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="/">Blog</a></li>
+                <li><a href="{% url 'contact' %}">Contacts</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="row no-gutters social-container">
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-facebook"></span><span>Facebook</span></a></div>
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-instagram"></span><span>instagram</span></a></div>
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-twitter"></span><span>twitter</span></a></div>
+          <div class="col"><a class="social-inner" href="#"><span class="icon mdi mdi-youtube-play"></span><span>google</span></a></div>
+        </div>
+      </footer>
+</body>
+</html>
